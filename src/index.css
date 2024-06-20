@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Muli";
+  src: url("./assets/styles/fonts/Muli-Bold.ttf");
+  src: url("./assets/styles/fonts/Muli.ttf");
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/styles/fonts/Muli-ExtraLight.ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/styles/fonts/Muli-ExtraLightItalic.ttf');
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* Muli Light */
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/styles/fonts/Muli-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/styles/fonts/Muli-LightItalic.ttf');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Muli Regular */
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/styles/fonts/Muli.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/styles/fonts/Muli-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Muli SemiBold */
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/styles/fonts/Muli-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Muli Bold */
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/styles/fonts/Muli-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/styles/fonts/Muli-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}

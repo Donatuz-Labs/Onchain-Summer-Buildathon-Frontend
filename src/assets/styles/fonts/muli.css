@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'Muli';
+  src: url('./fonts/Muli-ExtraLight.ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muli';
+  src: url('./fonts/Muli-ExtraLightItalic.ttf');
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* Muli Light */
+@font-face {
+  font-family: 'Muli';
+  src: url('./fonts/Muli-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muli';
+  src: url('./fonts/Muli-LightItalic.ttf');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Muli Regular */
+@font-face {
+  font-family: 'Muli';
+  src: url('./fonts/Muli-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muli';
+  src: url('./fonts/Muli-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Muli SemiBold */
+@font-face {
+  font-family: 'Muli';
+  src: url('./fonts/Muli-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muli';
+  src: url('./fonts/Muli-SemiBoldItalic.ttf');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Muli Bold */
+@font-face {
+  font-family: 'Muli';
+  src: url('./fonts/Muli-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muli';
+  src: url('./fonts/Muli-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
+
+
+

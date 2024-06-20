@@ -1,0 +1,31 @@
+.carousel-container {
+  @apply relative;
+
+  .carousel-root {
+    @apply bg-transparent rounded-xl !important;
+
+    .carousel {
+      .control-dots {
+        @apply mx-0 my-4;
+        .dot {
+          @apply w-2 h-2 bg-white bg-opacity-50 mx-1 shadow-none my-0;
+        }
+        .dot.selected, .dot:hover {
+          @apply bg-opacity-100 outline-none;
+        }
+      }
+
+      .slider-wrapper {
+        @apply rounded-xl !important;
+      }
+
+      .thumbs-wrapper {
+        @apply hidden;
+      }
+
+      .slide {
+        @apply bg-transparent !important;
+      }
+    }
+  }
+}

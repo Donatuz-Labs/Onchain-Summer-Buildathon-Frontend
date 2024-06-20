@@ -1,0 +1,7 @@
+.primary-font {
+  @apply font-avenir;
+}
+
+.secondary-font {
+  @apply font-nunito;
+}

@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'SourceSerifPro';
+  font-display: swap;
+  src: url('./fonts/SourceSerifPro-ExtraLight.ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSerifPro';
+  font-display: swap;
+  src: url('./fonts/SourceSerifPro-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSerifPro';
+  font-display: swap;
+  src: url('./fonts/SourceSerifPro-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSerifPro';
+  font-display: swap;
+  src: url('./fonts/SourceSerifPro-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSerifPro';
+  font-display: swap;
+  src: url('./fonts/SourceSerifPro-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceSerifPro';
+  font-display: swap;
+  src: url('./fonts/SourceSerifPro-Black.ttf');
+  font-weight: 900;
+  font-style: normal;
+}

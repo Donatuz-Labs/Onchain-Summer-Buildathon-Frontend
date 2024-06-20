@@ -1,0 +1,18 @@
+.loading-content {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: left;
+}
+.bounce {
+  animation-name: bounce;
+  animation-timing-function: linear;
+}
+@keyframes bounce {
+  0%   { transform: scaleX(0.02) translateX(0); }
+  18%  { transform: translateX(0) scaleX(1) }
+  30%  { transform: translateX(75%) scaleX(0.5) }
+  50%  { transform: scaleX(0.02) translateX(6150%) }
+  68%  { transform: translateX(25%) scaleX(1) }
+  81%  { transform: translateX(0) scaleX(0.5) }
+  100% { transform: scaleX(0.02) translateX(0); }
+}
