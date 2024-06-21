@@ -1,0 +1,11 @@
+/* Common button styles */
+.connect-button {
+	display: flex;
+	font-size: 1.2rem;
+	flex-direction: column;
+	margin: 1rem 0;
+	border-width: 1px;
+	border-radius: 0.8rem;
+	border-color: rgb(67 87 108);
+	font-weight: 600;
+}
