@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GenerateIcon from "../../assets/generate-image.svg";
 import TextInput from "../shared/TextInput";
 import { toast } from "react-toastify";
@@ -35,6 +35,13 @@ const PhotoSelector = () => {
     "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=1480&t=st=1718963064~exp=1718963664~hmac=ff9859c371bae929629cee481fdaa505f8f518f595761dc551351ad38e18cd21"
   );
   const [disable, setDisable] = useState(false);
+
+  useEffect(() => {
+    if (!wallet) {
+      console.log("No wallet found");
+    }
+  }, [wallet]);
+
   const { mutate: sendBatch, isPending: isBatchPending } =
     useSendBatchTransaction();
   const { data: nftBalance, refetch: refetchNFTs } = useReadContract(
@@ -86,13 +93,13 @@ const PhotoSelector = () => {
 
       const metadataUrl = `https://ipfs.io/ipfs/${uploadedImageResponse.IpfsHash}`;
       const transactions = [
-        {
+        claimNFT({
           contract: editionDropContract,
           tokenId: editionDropTokenId,
           to: wallet.address,
           quantity: 1,
           metadataUri: metadataUrl,
-        },
+        }),
       ];
 
       sendBatch(transactions, {
