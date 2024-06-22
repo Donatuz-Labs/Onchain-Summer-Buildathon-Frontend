@@ -228,15 +228,14 @@ const PhotoSelector = () => {
             value={prompt}
           />
 
-          <button
-            type="submit"
-            className="flex flex-col"
-            disabled={disable}
-            onClick={handleGenerateImage}
-          >
-            <button className="flex justify-center items-center">
+          <div className="flex flex-col">
+            <button
+              type="submit"
+              className="flex justify-center items-center"
+              disabled={disable}
+              onClick={handleGenerateImage}
+            >
               <div className="p-4 rounded-full bg-primary flex items-center justify-center">
-                {/* Flex container */}
                 <img
                   className="inline h-8 fill-white text-white ml-1 rounded-3"
                   src={GenerateIcon}
@@ -248,7 +247,7 @@ const PhotoSelector = () => {
             <span className="text-white text-center mt-1">
               {!generatedImage ? "Generate" : "Regenerate"}
             </span>
-          </button>
+          </div>
         </div>
       </div>
 
