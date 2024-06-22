@@ -90,30 +90,9 @@ const PhotoSelector = () => {
           avatar: `https://ipfs.io/ipfs/${uploadedImageResponse.IpfsHash}`,
         })
       );
+      navigate("/user-details");
 
-      const metadataUrl = `https://ipfs.io/ipfs/${uploadedImageResponse.IpfsHash}`;
-      const transactions = [
-        claimNFT({
-          contract: editionDropContract,
-          tokenId: editionDropTokenId,
-          to: wallet.address,
-          quantity: 1,
-          metadataUri: metadataUrl,
-        }),
-      ];
-
-      sendBatch(transactions, {
-        onError: (error) => {
-          console.error(`Error in minting the NFT: ${error.message}`);
-          alert(`Error in minting the NFT: ${error.message}`);
-        },
-        onSuccess: (result) => {
-          refetchNFTs();
-          console.log("Minting success:", result);
-          alert("NFT minted successfully!");
-          //navigate("/done");
-        },
-      });
+      //const metadataUrl = `https://ipfs.io/ipfs/${uploadedImageResponse.IpfsHash}`;
     } catch (error) {
       toast.error("Error uploading image");
       console.error(
