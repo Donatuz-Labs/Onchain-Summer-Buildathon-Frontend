@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GenerateIcon from "../../assets/generate-image.svg";
 import TextInput from "../shared/TextInput";
 import { toast } from "react-toastify";
@@ -35,6 +35,13 @@ const PhotoSelector = () => {
     "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=1480&t=st=1718963064~exp=1718963664~hmac=ff9859c371bae929629cee481fdaa505f8f518f595761dc551351ad38e18cd21"
   );
   const [disable, setDisable] = useState(false);
+
+  useEffect(() => {
+    if (!wallet) {
+      console.log("No wallet found");
+    }
+  }, [wallet]);
+
   const { mutate: sendBatch, isPending: isBatchPending } =
     useSendBatchTransaction();
   const { data: nftBalance, refetch: refetchNFTs } = useReadContract(
@@ -83,30 +90,9 @@ const PhotoSelector = () => {
           avatar: `https://ipfs.io/ipfs/${uploadedImageResponse.IpfsHash}`,
         })
       );
+      navigate("/user-details");
 
-      const metadataUrl = `https://ipfs.io/ipfs/${uploadedImageResponse.IpfsHash}`;
-      const transactions = [
-        {
-          contract: editionDropContract,
-          tokenId: editionDropTokenId,
-          to: wallet.address,
-          quantity: 1,
-          metadataUri: metadataUrl,
-        },
-      ];
-
-      sendBatch(transactions, {
-        onError: (error) => {
-          console.error(`Error in minting the NFT: ${error.message}`);
-          alert(`Error in minting the NFT: ${error.message}`);
-        },
-        onSuccess: (result) => {
-          refetchNFTs();
-          console.log("Minting success:", result);
-          alert("NFT minted successfully!");
-          //navigate("/done");
-        },
-      });
+      //const metadataUrl = `https://ipfs.io/ipfs/${uploadedImageResponse.IpfsHash}`;
     } catch (error) {
       toast.error("Error uploading image");
       console.error(
@@ -221,15 +207,14 @@ const PhotoSelector = () => {
             value={prompt}
           />
 
-          <button
-            type="submit"
-            className="flex flex-col"
-            disabled={disable}
-            onClick={handleGenerateImage}
-          >
-            <button className="flex justify-center items-center">
+          <div className="flex flex-col">
+            <button
+              type="submit"
+              className="flex justify-center items-center"
+              disabled={disable}
+              onClick={handleGenerateImage}
+            >
               <div className="p-4 rounded-full bg-primary flex items-center justify-center">
-                {/* Flex container */}
                 <img
                   className="inline h-8 fill-white text-white ml-1 rounded-3"
                   src={GenerateIcon}
@@ -241,7 +226,7 @@ const PhotoSelector = () => {
             <span className="text-white text-center mt-1">
               {!generatedImage ? "Generate" : "Regenerate"}
             </span>
-          </button>
+          </div>
         </div>
       </div>
 
