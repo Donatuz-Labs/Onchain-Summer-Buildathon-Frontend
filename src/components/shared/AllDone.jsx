@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import image from "../../assets/mdi_tick-circle.png";
 import { useSelector } from "react-redux";
+import imageBig from "../../assets/unknown-person.png";
 import {
   darkTheme,
   useActiveAccount,

@@ -39,7 +39,9 @@ const UserDetails = () => {
     }
   };
 
-  const { user } = useSelector((state) => state.authReducer.authData);
+  const { user } = useSelector(
+    (state) => state.authReducer.authData || { user: null }
+  );
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -66,7 +68,7 @@ const UserDetails = () => {
             </h1>
             <img
               className="mt-8 h-24 w-24 rounded-3 mb-10"
-              src={user?.avatar}
+              src={user?.avatar || imageBig}
               alt="Welcome"
               onClick={() => navigate("/select-photo")}
             />
