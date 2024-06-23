@@ -4,3 +4,4 @@ build
 .env.development
 .env.prod
 dist
+.vercel
