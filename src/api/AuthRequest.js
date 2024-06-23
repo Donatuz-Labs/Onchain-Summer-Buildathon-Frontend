@@ -21,7 +21,7 @@ export const signUp = (formData) =>
 		});
 
 export const updateUser = (formData) =>
-	API.put(`/auth/update`, formData)
+	API.put(`/users/update`, formData)
 		.then((response) => {
 			return response;
 		})
@@ -30,7 +30,7 @@ export const updateUser = (formData) =>
 		});
 
 export const updateUserDp = (formData) =>
-	API.put(`/auth/update/dp`, formData)
+	API.put(`/users/update/avatar`, formData)
 		.then((response) => {
 			return response;
 		})
@@ -39,16 +39,7 @@ export const updateUserDp = (formData) =>
 		});
 
 export const generateImage = (formData) =>
-	API.post(`/auth/generate-image`, formData)
-		.then((response) => {
-			return response;
-		})
-		.catch((error) => {
-			throw error;
-		});
-
-export const fetchImage = (formData) =>
-	API.post(`/auth/fetch-image`, formData)
+	API.post(`/ai/generate`, formData)
 		.then((response) => {
 			return response;
 		})
@@ -57,19 +48,9 @@ export const fetchImage = (formData) =>
 		});
 
 export const uploadImageToPinanata = (formData) =>
-	API.post(`/auth/upload-to-pinata`, formData)
+	API.post(`/pinata/upload`, formData)
 		.then((response) => {
 			return response;
-		})
-		.catch((error) => {
-			throw error;
-		});
-
-// API function for logging out
-export const logOut = () =>
-	API.post("/auth/logout")
-		.then((response) => {
-			return response.data;
 		})
 		.catch((error) => {
 			throw error;
@@ -78,7 +59,7 @@ export const logOut = () =>
 // ================ Not in Actions ===================== //
 // API function for getting user by wallet
 export const getUserByWallet = (formData) =>
-	API.post("/auth/get-user-by-wallet", formData)
+	API.post("/users/wallet", formData)
 		.then((response) => {
 			return response;
 		})
@@ -88,7 +69,7 @@ export const getUserByWallet = (formData) =>
 
 // API function for getting user by username
 export const getUserByUsername = (formData) =>
-	API.post("/auth/get-user-by-username", formData)
+	API.post("/users/username", formData)
 		.then((response) => {
 			return response;
 		})

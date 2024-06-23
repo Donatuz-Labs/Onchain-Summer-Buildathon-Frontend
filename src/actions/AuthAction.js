@@ -76,11 +76,3 @@ export const updateUserDp = (formData) =>
 		UPDATE_USER_SUCCESS,
 		UPDATE_USER_FAILURE
 	);
-
-export const logOut = () =>
-	handleAsyncAuthAction(
-		AuthApi.logOut,
-		LOGOUT_START,
-		LOGOUT_SUCCESS,
-		LOGOUT_FAIL
-	);
