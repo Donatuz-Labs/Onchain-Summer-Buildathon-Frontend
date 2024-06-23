@@ -1,32 +1,40 @@
-import React, { useCallback } from 'react';
-import { useNavigate } from "react-router-dom";
-// import { LOGIN } from '../../utils/routes';
+import React from "react";
+import { Link } from "react-router-dom";
 
-export const NotFoundPage = () => {
-  const navigate = useNavigate();
-  const returnHomeCallBack = useCallback(
-    () => {
-      // navigate(LOGIN)
-    },
-  );
-  return (
-    <>
-      <div className="flex flex-col bg-blue-500 items-center px-4 my-20 lg:my-10">
-        <div className="flex bg-blue-500 justify-center my-3 lg:my-3">
-          <img
-            className="block w-auto h-12 text-center"
-
-          />
-        </div>
-        <h1 className="mb-5 text-center text-8 font-heavy text-large text-primary">
-          Are you lost?
-        </h1>
-        <p className="text-center mb-9 max-w-196 text-slate">
-          This page does not exist.
-        </p>
-      </div>
-    </>
-  );
+const NotFoundPage = () => {
+	return (
+		<div className="flex flex-col items-center justify-center h-screen bg-dark-gray-left-gradient bg-blue-500">
+			<div className="flex justify-center items-center bg-blue-700 rounded-full w-24 h-24 mb-6">
+				{/* You can add an icon or image here */}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					className="h-12 w-12 text-white"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth={5}
+						d="M6 18L18 6M6 6l12 12"
+					/>
+				</svg>
+			</div>
+			<h1 className="text-4xl font-bold mb-3 text-white">
+				Are you lost?
+			</h1>
+			<p className="text-lg mb-8 text-white">
+				This page does not exist.
+			</p>
+			<Link
+				to="/"
+				className="bg-white text-blue-500 px-6 py-2 rounded-full font-semibold transition duration-300 ease-in-out hover:bg-blue-700 hover:text-primary"
+			>
+				Go Home
+			</Link>
+		</div>
+	);
 };
 
 export default NotFoundPage;
