@@ -1,21 +1,18 @@
 import { toast } from "react-toastify";
-import * as AuthApi from "../api/AuthRequest";
+import * as UserApi from "../api/UserRequest";
 import {
-	AUTH_START,
-	AUTH_SUCCESS,
-	AUTH_FAIL,
 	UPDATE_USER_START,
 	UPDATE_USER_SUCCESS,
 	UPDATE_USER_FAILURE,
 } from "./ActionTypes";
 
 // Handler function
-const handleAsyncAuthAction =
+const handleAsyncUserAction =
 	(
-		apiFunction, //LOGIN
-		startActionType, //AUTH_START
-		successActionType, //AUTH_SUCCESS
-		failActionType //AUTH_FAIL
+		apiFunction,
+		startActionType,
+		successActionType,
+		failActionType
 	) =>
 	async (dispatch) => {
 		dispatch({ type: startActionType });
@@ -41,18 +38,19 @@ const handleAsyncAuthAction =
 		}
 	};
 
-// Auth actions
-export const logIn = (formData) =>
-	handleAsyncAuthAction(
-		() => AuthApi.logIn(formData),
-		AUTH_START,
-		AUTH_SUCCESS,
-		AUTH_FAIL
+// Update user
+export const updateUser = (formData) =>
+	handleAsyncUserAction(
+		() => UserApi.updateUser(formData),
+		UPDATE_USER_START,
+		UPDATE_USER_SUCCESS,
+		UPDATE_USER_FAILURE
 	);
-export const signUp = (formData) =>
-	handleAsyncAuthAction(
-		() => AuthApi.signUp(formData),
-		AUTH_START,
-		AUTH_SUCCESS,
-		AUTH_FAIL
+
+export const updateUserDp = (formData) =>
+	handleAsyncUserAction(
+		() => UserApi.updateUserDp(formData),
+		UPDATE_USER_START,
+		UPDATE_USER_SUCCESS,
+		UPDATE_USER_FAILURE
 	);

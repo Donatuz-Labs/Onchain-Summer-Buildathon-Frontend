@@ -25,11 +25,9 @@ import {
 	client,
 	accountAbstraction,
 } from "../../utils/constants";
-import {
-	generateImage,
-	uploadImageToPinanata,
-} from "../../api/AuthRequest.js";
-import { updateUserDp } from "../../actions/AuthAction.js";
+import { generateImage } from "../../api/AiRequest.js";
+import { uploadImageToPinanata } from "../../api/PinataRequest.js";
+import { updateUserDp } from "../../actions/UserAction.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 

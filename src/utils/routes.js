@@ -5,6 +5,5 @@ export const ROUTES = {
 	USER_DETAILS: "/user-details",
 	PHOTO_SELECTOR: "/select-photo",
 	DONE: "/done",
-	LOGOUT: "/logout",
 	NOT_FOUND: "*",
 };

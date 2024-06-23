@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserByUsername } from "../../api/AuthRequest";
+import { getUserByUsername } from "../../api/UserRequest";
 import StandardButton from "../shared/StandardButton";
 import TextInput from "../shared/TextInput";
 import { ROUTES } from "../../utils/routes";
@@ -15,7 +15,7 @@ import {
 	accountAbstraction,
 	client,
 } from "../../utils/constants.js";
-import { updateUser } from "../../actions/AuthAction";
+import { updateUser } from "../../actions/UserAction";
 import ChevronRight from "../../assets/svg/chevron-right.svg";
 
 const UserDetails = () => {
@@ -31,13 +31,15 @@ const UserDetails = () => {
 	);
 
 	const [fullName, setFullName] = useState(
-		user.displayName || ""
+		user?.displayName || ""
 	);
 	const [userName, setUserName] = useState(
-		user.username || ""
+		user?.username || ""
 	);
-	const [dob, setDob] = useState(user.dob || "");
-	const [address, setAddress] = useState(user.address || "");
+	const [dob, setDob] = useState(user?.dob || "");
+	const [address, setAddress] = useState(
+		user?.address || ""
+	);
 
 	const handleUsernameChange = async (value) => {
 		try {
@@ -75,7 +77,7 @@ const UserDetails = () => {
 						</h1>
 						<img
 							className="mt-8 h-24 w-24 rounded-3 mb-10"
-							src={user.avatar}
+							src={user?.avatar}
 							alt="Welcome"
 							onClick={() => navigate("/select-photo")}
 						/>

@@ -14,7 +14,7 @@ import {
 import "./ConnectButton.css";
 import { useDispatch } from "react-redux";
 import { logIn, signUp } from "../../actions/AuthAction.js";
-import { getUserByWallet } from "../../api/AuthRequest.js";
+import { getUserByWallet } from "../../api/UserRequest.js";
 
 const Welcome = () => {
 	const navigate = useNavigate();

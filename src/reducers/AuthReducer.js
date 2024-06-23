@@ -3,9 +3,6 @@ import {
 	AUTH_START,
 	AUTH_SUCCESS,
 	AUTH_FAIL,
-	LOGOUT_START,
-	LOGOUT_SUCCESS,
-	LOGOUT_FAIL,
 	UPDATE_USER_START,
 	UPDATE_USER_SUCCESS,
 	UPDATE_USER_FAILURE,
@@ -32,19 +29,6 @@ const authReducer = (state = initialState, action) => {
 				break;
 			case AUTH_FAIL:
 				draft.loading = false;
-				draft.error = action.error;
-				break;
-			case LOGOUT_START:
-				draft.logoutLoading = true;
-				draft.error = null;
-				break;
-			case LOGOUT_SUCCESS:
-				draft.authData = null;
-				draft.logoutLoading = false;
-				draft.error = null;
-				break;
-			case LOGOUT_FAIL:
-				draft.logoutLoading = false;
 				draft.error = action.error;
 				break;
 			case UPDATE_USER_START:

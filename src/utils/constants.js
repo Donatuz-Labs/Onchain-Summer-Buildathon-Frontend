@@ -6,7 +6,7 @@ import { baseSepolia } from "thirdweb/chains";
 import { inAppWallet } from "thirdweb/wallets";
 
 // Replace this with your client ID string
-const clientId = "0f2520a80ed788aed1f4eca18913d0ce";
+const clientId = process.env.REACT_APP_CLIENT_ID;
 
 if (!clientId) {
 	throw new Error("No client ID provided");
@@ -18,10 +18,11 @@ export const client = createThirdwebClient({
 
 export const chain = baseSepolia;
 export const tokenDropAddress =
-	"0xd64A548A82c190083707CBEFD26958E5e6551D18";
+	process.env.REACT_APP_TOKEN_DROP_ADDRESS;
 export const editionDropAddress =
-	"0x638263e3eAa3917a53630e61B1fBa685308024fa";
-export const editionDropTokenId = 0n;
+	process.env.REACT_APP_EDITION_DROP_ADDRESS;
+export const editionDropTokenId =
+	process.env.REACT_APP_EDITION_DROP_TOKEN_ID;
 
 export const editionDropContract = getContract({
 	address: editionDropAddress,
